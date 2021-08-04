@@ -1,0 +1,110 @@
+<!-- Final project created by Calculus Masters -->
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/jsxgraph@1.2.1/distrib/jsxgraph.css" />
+    <link rel="stylesheet" href="./styles.css">
+    <title>Limit</title>
+</head>
+
+<body style="background-color: var(--primaryBtn);">
+    <div class="container-fluid ">
+        <div class="row">
+            <div class="col-lg-3 shadow rounded mt-2 pb-2" style="background-color:var(--primaryBackground);color:#fff">
+                <div class="row pt-2">
+                    <div class="col-1">
+                        <a class="btn p-0 pt-1 headerBtn" href="index.html"><svg xmlns="http://www.w3.org/2000/svg"
+                                width="32" height="32" fill="white" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
+                            </svg></a>
+                    </div>
+                    <div class="col">
+                        <h2 class="mt-1">Limits</h2>
+                    </div>
+                </div>
+                <div id="func1">Explore the limit as x approaches 1. Use the slider to choose values of x getting closer
+                    to 1 from
+                    the left and repeat from the right.</div>
+                <div id="func2">Explore the limit as x approaches pi/2. Use the slider to choose values of x getting
+                    closer to pi/2 from the left and repeat from the right.</div>
+                <div id="func3">Explore the limit as x approaches 2. Use the slider to choose values of x getting closer
+                    to 2 from the left and repeat from the right.</div>
+                <div class="row">
+                    <div class="col-3 mt-2 ">
+                        <span>\[ f \left( x \right) =\]</span>
+                    </div>
+                    <div class="col-8">
+                        <select class="custom-select mt-3" id="functionSelection" onchange="updateFunction(this)">
+                            <option value="1">-x^3-4*x^2+4*x+16</option>
+                            <option value="2">tan(x)</option>
+                            <option value="3"> {x+5 x>=2 & -1/2x+3 x&lt2} </option>
+
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row pb-3 pt-3 mb-5mt-2">
+                    <div class="col-3"><span>\[ f \left( x \right) =\]</span></div>
+                    <div class="col">
+                        <div id="math-display"> <span id="math-display1">\[ -x^{3} - 4 \, x^{2} + 4 \, x + 16 \]</span>
+                            <span id="math-display2" style="display: none;">
+                                \[x+5 \left\{ x \ge 2 \right\}\]
+                            </span>
+                            <span id="math-display3" style="display: none;">
+                                \[ \frac{1}{2} \, x + 3 \left\{ x&lt2 \right\}\]
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-8 mt-3">
+                        <input type="range" min="-5" max="5" value="0" class="slider" id="l">
+                    </div>
+                    <div class="col-4 mt-3">
+                        <p style="font-size: 12;margin-top: 4px;">x = <span id="lVal"></span></p>
+                    </div>
+                </div>
+                <div style="background-color:#f5f5f5;padding: 1px;width: 100%;border-radius: 5px;" class="mt-4">
+                    <p id="limit" class="mt-3" style="text-align: center; color: black;"></p>
+                </div>
+            </div>
+            <div class="col-lg-9 col-md-12 col-sm-12 ">
+                <div id="graph" class="mt-2 graph">
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="./mathlex-unknown.js"></script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+    });
+    </script>
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+        </script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" charset="UTF-8"
+        src="https://cdn.jsdelivr.net/npm/jsxgraph@1.2.1/distrib/jsxgraphcore.js"></script>
+    <script src="./univeraslFunc.js"></script>
+    <script src="./Limits.js"></script>
+</body>
+
+</html>

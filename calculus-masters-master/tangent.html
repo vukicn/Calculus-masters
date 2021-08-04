@@ -1,0 +1,85 @@
+<!-- Final project created by Calculus Masters -->
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/jsxgraph@1.2.1/distrib/jsxgraph.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Tangent Line</title>
+</head>
+
+<body style="background-color: var(--primaryBtn);">
+    <div class="container-fluid">
+        <div class="row mt-2">
+            <div class="col-lg-3 shadow rounded mt-2" style="background-color:var(--primaryBackground);color:#fff">
+                <div class="row pt-2">
+                    <div class="col-1">
+                        <a class="btn p-0 pt-1 headerBtn" href="index.html"><svg xmlns="http://www.w3.org/2000/svg"
+                                width="32" height="32" fill="#fff" class="bi bi-arrow-left" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
+                            </svg></a>
+                    </div>
+                    <div class="col">
+                        <h2 class="mt-1">Tangent Line</h2>
+                    </div>
+                </div>
+                <div>You will approximate the slope tangent line to the curve <div class="row">
+                        <div class="col-3 mt-2">
+                            <span>\[ f \left( x \right) =\]</span>
+                        </div>
+                        <div class="col-4 mt-2">
+                            <span>\[ -x^{3} - 4 \, x^{2} + 4 \, x + 16 \]</span>
+                        </div>
+                    </div> at the point P.
+                    First, choose a point P by clicking and dragging P to your desired location. Use the slider to move
+                    the point Q on the curve closer to P. Note that the slider represents the distance along the x-axis
+                    Q is away from P. The blue, dashed line is the secant line containing the points P and Q. The
+                    orange,
+                    dashed line is the tangent line to the curve at P. What do you observe as the point Q moves closer
+                    to P?</div>
+                <div class="row mt-5">
+                    <div class="col-8">
+                        <input type="range" min="-5" max="5" value="0" class="slider" id="q">
+                    </div>
+                    <div class="col-4">
+                        <p style="font-size: 15px;">Q = <span id="qVal"></span></p>
+                    </div>
+                </div>
+
+                <br />
+                <br />
+            </div>
+            <div class="col-lg-9 col-md-12 col-sm-12">
+                <div id="graph" class="mt-2 graph">
+                </div>
+            </div>
+        </div>
+        <script src="./mathlex-unknown.js"></script>
+        <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]} });
+    </script>
+        <script type="text/javascript" async
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+        <script type="text/javascript" charset="UTF-8"
+            src="https://cdn.jsdelivr.net/npm/jsxgraph@1.2.1/distrib/jsxgraphcore.js"></script>
+        <script src="./univeraslFunc.js"></script>
+        <script src="./tangent.js"></script>
+</body>
+
+</html>
